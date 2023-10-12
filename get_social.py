@@ -29,7 +29,7 @@ def update_worksheet_cell(cell, result):
         worksheet.update(cell, result)  # Update cell at column with result
 
 
-for row in range(847, 3085):
+for row in range(862, 3085):
 
     link = worksheet.acell(f"{chr(ord('D'))}{row}").value
     title = worksheet.acell(f"{chr(ord('A'))}{row}").value
@@ -59,7 +59,6 @@ for row in range(847, 3085):
             update_worksheet_cell(f"{chr(ord('G'))}{row}",discord)
         
         print("updated socials")
-        time.sleep(2)
 
     except Exception as e:
         print(f"Error occurred: {e}")
