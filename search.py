@@ -27,7 +27,7 @@ worksheet = sheet.get_worksheet(0)
 print("can see sheet")
 
 
-for row in range(40, 3092):
+for row in range(3083, 3420):
     print(f"Processing row {row}")
     cell = f"{chr(ord('A'))}{row}"
     term = worksheet.acell(cell).value
@@ -35,13 +35,11 @@ for row in range(40, 3092):
     time.sleep(1)
 
     try:
-        
         if term != "":
-            '''
             driver.get('https://www.google.com/')
             search_input = driver.find_element(By.NAME, 'q')
             search_input.clear()
-            search_input.send_keys(term + " blockchain website")
+            search_input.send_keys(term + " crypto")
             search_input.send_keys(Keys.ENTER)
             wait = WebDriverWait(driver, 5)
             search_result = wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'yuRUbf')))
@@ -50,37 +48,6 @@ for row in range(40, 3092):
             worksheet.update(f"{chr(ord('D'))}{row}", top_result_link)
             time.sleep(2)
 
-            '''
-            driver.get('https://www.google.com/')
-            search_input = driver.find_element(By.NAME, 'q')
-            search_input.clear()
-            search_input.send_keys(term + " blockchain twitter")
-            search_input.send_keys(Keys.ENTER)
-            wait = WebDriverWait(driver, 5)
-            search_result = wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'yuRUbf')))
-            link_element = search_result.find_element(By.TAG_NAME, 'a')
-            top_result_link = link_element.get_attribute('href')
-            worksheet.update(f"{chr(ord('E'))}{row}", top_result_link)
-            time.sleep(1)
-
-            '''
-            driver.get('https://www.google.com/')
-            search_input = driver.find_element(By.NAME, 'q')
-            search_input.clear()
-            search_input.send_keys(term + " blockchain linkedin")
-            search_input.send_keys(Keys.ENTER)
-            wait = WebDriverWait(driver, 5)
-            search_result = wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'yuRUbf')))
-            link_element = search_result.find_element(By.TAG_NAME, 'a')
-            top_result_link = link_element.get_attribute('href')
-            worksheet.update(f"{chr(ord('F'))}{row}", top_result_link)
-            time.sleep(6.5)
-            pyautogui.scroll(-800)
-            time.sleep(2.1)
-            pyautogui.click()
-            time.sleep(3.1)
-            pyautogui.scroll(200)
-            '''
     except Exception as e:
         print(f"An error occurred: {e}")
         traceback.print_exc()

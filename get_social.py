@@ -19,7 +19,7 @@ driver = webdriver.Chrome()
 sheet_name = "0 - Blockchain Data"
 sheet = client.open(sheet_name)
 worksheet = sheet.get_worksheet(0)
-wait = WebDriverWait(driver, 1)
+wait = WebDriverWait(driver, 1.5)
 
 print("can see sheet")
 
@@ -29,20 +29,21 @@ def update_worksheet_cell(cell, result):
         worksheet.update(cell, result)  # Update cell at column with result
 
 
-for row in range(862, 3085):
+for row in range(473, 524):
 
     link = worksheet.acell(f"{chr(ord('D'))}{row}").value
     title = worksheet.acell(f"{chr(ord('A'))}{row}").value
+    curr_time = time.strftime("%H:%M:%S",time.localtime())
     
     try:
-
-        print(f"Processing row {row} with {title}")
+        
+        print(f"{curr_time}, processing row {row} with {title}")
         driver.get(link)
         wait.until(EC.presence_of_all_elements_located)
 
         links = driver.find_elements(By.TAG_NAME, 'a')
         print("links scanned")
-
+        '''
         twitter_links = [link.get_attribute('href') for link in links if link.get_attribute('href') is not None and 'twitter.com' in link.get_attribute('href')]
         if len(twitter_links) > 0:
             twitter = twitter_links[0]
@@ -52,8 +53,8 @@ for row in range(862, 3085):
         if len(linkedin_links) > 0:
             linkedin = linkedin_links[0]
             update_worksheet_cell(f"{chr(ord('F'))}{row}",linkedin)
-        
-        discord_links = [link.get_attribute('href') for link in links if link.get_attribute('href') is not None and 'discord.gg' in link.get_attribute('href')]
+        '''
+        discord_links = [link.get_attribute('href') for link in links if link.get_attribute('href') is not None and 'discord.com' in link.get_attribute('href')]
         if len(discord_links) > 0:
             discord = discord_links[0]
             update_worksheet_cell(f"{chr(ord('G'))}{row}",discord)
