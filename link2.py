@@ -8,8 +8,6 @@ import gspread
 from google.oauth2.service_account import Credentials
 import time
 from selenium.common.exceptions import StaleElementReferenceException
-import re
-from bs4 import BeautifulSoup
 import traceback
 
 scopes = ['https://www.googleapis.com/auth/drive']

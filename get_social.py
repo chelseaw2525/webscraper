@@ -7,8 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 import time
 from selenium.common.exceptions import StaleElementReferenceException
 from selenium.webdriver.support import expected_conditions as EC
-import traceback
-import re
+
 
 scopes = ['https://www.googleapis.com/auth/drive']
 creds = Credentials.from_service_account_file("C:\\Users\\bookw\\Downloads\\liquid-receiver-386602-04d443fa11c8.json")
@@ -29,12 +28,12 @@ def update_worksheet_cell(cell, result):
         worksheet.update(cell, result)  # Update cell at column with result
 
 
-for row in range(473, 524):
+for row in range(1494, 3420):
 
-    link = worksheet.acell(f"{chr(ord('D'))}{row}").value
+    link = worksheet.acell(f"{chr(ord('B'))}{row}").value
     title = worksheet.acell(f"{chr(ord('A'))}{row}").value
     curr_time = time.strftime("%H:%M:%S",time.localtime())
-    
+    time.sleep(1)
     try:
         
         print(f"{curr_time}, processing row {row} with {title}")
@@ -43,7 +42,7 @@ for row in range(473, 524):
 
         links = driver.find_elements(By.TAG_NAME, 'a')
         print("links scanned")
-        '''
+
         twitter_links = [link.get_attribute('href') for link in links if link.get_attribute('href') is not None and 'twitter.com' in link.get_attribute('href')]
         if len(twitter_links) > 0:
             twitter = twitter_links[0]
@@ -53,11 +52,11 @@ for row in range(473, 524):
         if len(linkedin_links) > 0:
             linkedin = linkedin_links[0]
             update_worksheet_cell(f"{chr(ord('F'))}{row}",linkedin)
-        '''
+
         discord_links = [link.get_attribute('href') for link in links if link.get_attribute('href') is not None and 'discord.com' in link.get_attribute('href')]
         if len(discord_links) > 0:
             discord = discord_links[0]
-            update_worksheet_cell(f"{chr(ord('G'))}{row}",discord)
+            update_worksheet_cell(f"{chr(ord('E'))}{row}",discord)
         
         print("updated socials")
 

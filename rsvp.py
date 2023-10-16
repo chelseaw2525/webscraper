@@ -9,8 +9,6 @@ from google.oauth2.service_account import Credentials
 import time
 from selenium.common.exceptions import StaleElementReferenceException
 from selenium.common.exceptions import NoSuchElementException
-import re
-from bs4 import BeautifulSoup
 import traceback
 
 scopes = ['https://www.googleapis.com/auth/drive']

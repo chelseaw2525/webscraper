@@ -4,7 +4,6 @@ import gspread
 from google.oauth2.service_account import Credentials
 import time
 from selenium.common.exceptions import StaleElementReferenceException
-import re
 
 def find_this(driver, partial_link_text):
     xpath_expression = "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '{}')]".format(partial_link_text.lower())

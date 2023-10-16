@@ -7,46 +7,41 @@ import gspread
 from google.oauth2.service_account import Credentials
 import time
 from selenium.common.exceptions import StaleElementReferenceException
-import re
-from bs4 import BeautifulSoup
 import traceback
-import pyautogui
-
 
 scopes = ['https://www.googleapis.com/auth/drive']
-creds = Credentials.from_service_account_file("C:\\Users\\bookw\\Downloads\\liquid-receiver-386602-04d443fa11c8.json")
+creds = Credentials.from_service_account_file("C:\\Users\\bookw\\Downloads\\liquid-receiver.json")
 creds = creds.with_scopes(scopes)
 client = gspread.authorize(credentials=creds)
 
 driver = webdriver.Chrome()
-sheet_name = "0 - Blockchain Data"
+sheet_name = "test"
 sheet = client.open(sheet_name)
 print(sheet_name)
 worksheet = sheet.get_worksheet(0)
+wait = WebDriverWait(driver, 5)
 
 print("can see sheet")
 
 
-for row in range(3083, 3420):
+for row in range(1, 200):
     print(f"Processing row {row}")
     cell = f"{chr(ord('A'))}{row}"
     term = worksheet.acell(cell).value
     print(term)
-    time.sleep(1)
 
     try:
         if term != "":
             driver.get('https://www.google.com/')
             search_input = driver.find_element(By.NAME, 'q')
             search_input.clear()
-            search_input.send_keys(term + " crypto")
+            search_input.send_keys(term)
             search_input.send_keys(Keys.ENTER)
-            wait = WebDriverWait(driver, 5)
             search_result = wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'yuRUbf')))
             link_element = search_result.find_element(By.TAG_NAME, 'a')
             top_result_link = link_element.get_attribute('href')
-            worksheet.update(f"{chr(ord('D'))}{row}", top_result_link)
-            time.sleep(2)
+            worksheet.update(f"{chr(ord('B'))}{row}", top_result_link)
+            #time.sleep(2)
 
     except Exception as e:
         print(f"An error occurred: {e}")
@@ -54,4 +49,3 @@ for row in range(3083, 3420):
 
 print("process finished!!!!!!!!!!")
 driver.quit()
- 

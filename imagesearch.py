@@ -7,10 +7,8 @@ import gspread
 from google.oauth2.service_account import Credentials
 import time
 from selenium.common.exceptions import StaleElementReferenceException
-import re
-from bs4 import BeautifulSoup
 import traceback
-import pyperclip
+
 
 scopes = ['https://www.googleapis.com/auth/drive']
 creds = Credentials.from_service_account_file("C:\\Users\\bookw\\Downloads\\liquid-receiver-386602-04d443fa11c8.json")
