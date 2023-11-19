@@ -18,7 +18,7 @@ driver = webdriver.Chrome()
 sheet_name = "0 - Blockchain Data"
 sheet = client.open(sheet_name)
 worksheet = sheet.get_worksheet(0)
-wait = WebDriverWait(driver, 1.5)
+wait = WebDriverWait(driver, 0.5)
 
 print("can see sheet")
 
@@ -28,7 +28,7 @@ def update_worksheet_cell(cell, result):
         worksheet.update(cell, result)  # Update cell at column with result
 
 
-for row in range(1494, 3420):
+for row in range(0, 3420):
 
     link = worksheet.acell(f"{chr(ord('B'))}{row}").value
     title = worksheet.acell(f"{chr(ord('A'))}{row}").value
