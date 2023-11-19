@@ -11,7 +11,7 @@ location = "insert chat name"
 time.sleep(20)
 for i in range (0, 1000):
 	try:
-		element = driver.find_element(By.CSS_SELECTOR, "[aria-label='Message + "location"+ ']")
+		element = driver.find_element(By.CSS_SELECTOR, "[aria-label='Message" + location+ "']")
 		element.send_keys(Keys.ARROW_UP)
 		element = driver.find_element(By.CSS_SELECTOR, "div[role='textbox']")
 		element.click()
