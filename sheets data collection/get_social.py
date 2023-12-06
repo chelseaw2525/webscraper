@@ -5,17 +5,16 @@ import gspread
 from google.oauth2.service_account import Credentials
 from selenium.webdriver.support.ui import WebDriverWait
 import time
-from selenium.common.exceptions import StaleElementReferenceException
 from selenium.webdriver.support import expected_conditions as EC
 
 
 scopes = ['https://www.googleapis.com/auth/drive']
-creds = Credentials.from_service_account_file("C:\\Users\\bookw\\Downloads\\liquid-receiver-386602-04d443fa11c8.json")
+creds = Credentials.from_service_account_file("C:\\Users\\bookw\\Downloads\\liquid-receiver.json") #change to user
 creds = creds.with_scopes(scopes)
 client = gspread.authorize(credentials=creds)
 
 driver = webdriver.Chrome()
-sheet_name = "0 - Blockchain Data"
+sheet_name = "" #insert sheet name here
 sheet = client.open(sheet_name)
 worksheet = sheet.get_worksheet(0)
 wait = WebDriverWait(driver, 0.5)

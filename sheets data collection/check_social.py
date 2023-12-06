@@ -3,7 +3,6 @@ from selenium.webdriver.common.by import By
 import gspread
 from google.oauth2.service_account import Credentials
 import time
-from selenium.common.exceptions import StaleElementReferenceException
 
 def find_this(driver, partial_link_text):
     xpath_expression = "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '{}')]".format(partial_link_text.lower())
@@ -11,13 +10,13 @@ def find_this(driver, partial_link_text):
     return elements
 
 scopes = ['https://www.googleapis.com/auth/drive']
-creds = Credentials.from_service_account_file("C:\\Users\\bookw\\Downloads\\liquid-receiver-386602-04d443fa11c8.json")
+creds = Credentials.from_service_account_file("C:\\Users\\bookw\\Downloads\\liquid-receiver.json") #change to user
 creds = creds.with_scopes(scopes)
 client = gspread.authorize(credentials=creds)
 
 driver = webdriver.Chrome()
 
-sheet_name = "chainset"
+sheet_name = "" #insert target sheet name
 sheet = client.open(sheet_name)
 worksheet = sheet.get_worksheet(0)
 
