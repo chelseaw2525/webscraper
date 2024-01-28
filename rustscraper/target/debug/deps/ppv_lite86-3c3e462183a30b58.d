@@ -1,0 +1,11 @@
+C:\Users\bookw\Code\webscraping\rustscraper\target\debug\deps\libppv_lite86-3c3e462183a30b58.rmeta: C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ppv-lite86-0.2.17\src\lib.rs C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ppv-lite86-0.2.17\src\soft.rs C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ppv-lite86-0.2.17\src\types.rs C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ppv-lite86-0.2.17\src\x86_64\mod.rs C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ppv-lite86-0.2.17\src\x86_64\sse2.rs
+
+C:\Users\bookw\Code\webscraping\rustscraper\target\debug\deps\libppv_lite86-3c3e462183a30b58.rlib: C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ppv-lite86-0.2.17\src\lib.rs C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ppv-lite86-0.2.17\src\soft.rs C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ppv-lite86-0.2.17\src\types.rs C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ppv-lite86-0.2.17\src\x86_64\mod.rs C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ppv-lite86-0.2.17\src\x86_64\sse2.rs
+
+C:\Users\bookw\Code\webscraping\rustscraper\target\debug\deps\ppv_lite86-3c3e462183a30b58.d: C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ppv-lite86-0.2.17\src\lib.rs C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ppv-lite86-0.2.17\src\soft.rs C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ppv-lite86-0.2.17\src\types.rs C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ppv-lite86-0.2.17\src\x86_64\mod.rs C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ppv-lite86-0.2.17\src\x86_64\sse2.rs
+
+C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ppv-lite86-0.2.17\src\lib.rs:
+C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ppv-lite86-0.2.17\src\soft.rs:
+C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ppv-lite86-0.2.17\src\types.rs:
+C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ppv-lite86-0.2.17\src\x86_64\mod.rs:
+C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ppv-lite86-0.2.17\src\x86_64\sse2.rs:

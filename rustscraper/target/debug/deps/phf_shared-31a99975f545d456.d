@@ -1,0 +1,5 @@
+C:\Users\bookw\Code\webscraping\rustscraper\target\debug\deps\libphf_shared-31a99975f545d456.rmeta: C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\phf_shared-0.10.0\src/lib.rs
+
+C:\Users\bookw\Code\webscraping\rustscraper\target\debug\deps\phf_shared-31a99975f545d456.d: C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\phf_shared-0.10.0\src/lib.rs
+
+C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\phf_shared-0.10.0\src/lib.rs:
