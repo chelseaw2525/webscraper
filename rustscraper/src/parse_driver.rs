@@ -7,7 +7,6 @@ use std::time::Duration;
 
 static TARGET: &str = "https://docs.google.com/spreadsheets/u/1/d/1TdjbZZjEVkCuqMCOCz0cEVC-lUTi9RNBx_YZOoN2N2U/htmlview";
 
-
 #[tokio::main]
 async fn main() ->  Result<(), Box<dyn Error + Send + Sync>> {
     let body = reqwest::get(TARGET).await?.text().await?;
@@ -24,16 +23,24 @@ async fn main() ->  Result<(), Box<dyn Error + Send + Sync>> {
     caps.add_chrome_arg("--enable-automation")?;
     let driver = WebDriver::new("http://localhost:9515", caps).await?;
 
-    for link in links {
+    for n in 44..203 {
+        let link = &links[n];
         driver.goto::<&str>(link.as_ref()).await?;
-        /*let elem_form = driver.find(By::Id("search-form")).await?;
-        let elem_text = elem_form.find(By::Id("searchInput")).await?;
-        elem_text.send_keys("selenium").await?;
-        let elem_button = elem_form.find(By::Css("button[type='submit']")).await?;
-        elem_button.click().await?;
-        driver.query(By::ClassName("firstHeading")).first().await?;
-        assert_eq!(driver.title().await?, "Selenium - Wikipedia");*/
-        thread::sleep(Duration::new(1,0));
+        
+        if !(link.contains("lu.ma")) {
+            thread::sleep(Duration::new(10,0));   
+        }
+        //else {
+            thread::sleep(Duration::new(15,0));
+            /*
+            let elem_button = driver.find(By::Css("button[type='button']")).await?.click().await?.unwrap();
+
+            let name_field = driver.find(By::Id("rc")).await?.click().await?.expect("not found");
+            name_field.send_keys(name).await?.except("not found");
+
+            let email_field = driver.find(By::Id("rd")).await?.click().await?.expect("not found");
+            email_field.send_keys(email).await?.except("not found");*/
+        //}
     }
 
     driver.quit().await?;

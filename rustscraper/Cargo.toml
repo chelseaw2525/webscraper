@@ -23,3 +23,7 @@ path = "src/parse_driver.rs"
 [[bin]]
 name = "sheets"
 path = "src/sheets.rs"
+
+[[bin]]
+name = "mines"
+path = "src/mines.rs"
