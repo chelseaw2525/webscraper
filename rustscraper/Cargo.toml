@@ -25,5 +25,5 @@ name = "sheets"
 path = "src/sheets.rs"
 
 [[bin]]
-name = "mines"
-path = "src/mines.rs"
+name = "catenary"
+path = "src/catenary.rs"
