@@ -1,37 +1,28 @@
 extern crate google_sheets4 as sheets4;
-use yup_oauth2;
 use sheets4::api::ValueRange;
+use sheets4::{Result, Error};
 use std::default::Default;
-use sheets4::{Sheets, hyper, Error};
-//use sheets4::{Result, hyper_rustls, chrono, FieldMask};
+use sheets4::{Sheets, oauth2, hyper, hyper_rustls, chrono, FieldMask};
+use sheets4::oauth2::authenticator::Authenticator;
+use config::Config;
+
 
 #[tokio::main]
 async fn main() {
-
-    let secret = yup_oauth2::read_application_secret("C:\\Users\\bookw\\Downloads\\liquid-receiver.json").await.expect("unreadable");
-    let auth = yup_oauth2::InstalledFlowAuthenticator::builder(
+    let secret= oauth2::parse_service_account_key("C:\\Users\\bookw\\Downloads\\client-secret.json").unwrap();
+    let auth = oauth2::InstalledFlowAuthenticator::builder(
         secret,
-        yup_oauth2::InstalledFlowReturnMethod::HTTPRedirect,
-    )
-    .persist_tokens_to_disk("tokencache.json")
-    .build()
-    .await
-    .unwrap();
-
-    let hub = Sheets::new(hyper::Client::new(), auth,);
-
-    let req = ValueRange::default();
-    
-    // You can configure optional parameters by calling the respective setters at will, and
-    // execute the final call using `doit()`.
-    // Values shown here are possibly random and not representative !
-    let result = hub.spreadsheets().values_append(req, "1TdjbZZjEVkCuqMCOCz0cEVC-lUTi9RNBx_YZOoN2N2U", "Sheet1!A:A")
-                .value_input_option("amet.")
-                .response_value_render_option("duo")
-                .response_date_time_render_option("ipsum")
-                .insert_data_option("gubergren")
-                .include_values_in_response(true)
-                .doit().await;
+        oauth2::InstalledFlowReturnMethod::HTTPRedirect,
+    ).build().await.unwrap();
+    let mut hub = Sheets::new(hyper::Client::builder().build(hyper_rustls::HttpsConnectorBuilder::new().with_native_roots().https_or_http().enable_http1().build()), auth);
+    let mut req = ValueRange::default();
+    let result = hub.spreadsheets().values_append(req, "spreadsheetId", "range")
+             .value_input_option("amet.")
+             .response_value_render_option("duo")
+             .response_date_time_render_option("ipsum")
+             .insert_data_option("gubergren")
+             .include_values_in_response(true)
+             .doit().await;
     
     match result {
         Err(e) => match e {

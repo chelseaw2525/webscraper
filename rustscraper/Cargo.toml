@@ -15,6 +15,8 @@ hyper-rustls = "*"
 serde = "*"
 serde_json = "*"
 yup-oauth2 = "*"
+config = "*"
+rsautogui = "0.2.2"
 
 [[bin]]
 name = "parse_driver"
@@ -27,3 +29,7 @@ path = "src/sheets.rs"
 [[bin]]
 name = "catenary"
 path = "src/catenary.rs"
+
+[[bin]]
+name = "searcher"
+path = "src/searcher.rs"
