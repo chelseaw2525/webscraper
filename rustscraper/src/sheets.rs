@@ -24,6 +24,6 @@ async fn main() {
     let elapsed_time = now.elapsed();
     println!("Time @ {} microsec.", elapsed_time.as_micros());
     
-    let mut req = ValueRange{major_dimension: Some("ROWS".to_owned()), values: Some(vec![vec![Into::into("ferris"), Into::into("corro")]]), range: Some(String::from("A1:A6"))};    
-    let result = hub.spreadsheets().values_append( req, sheet_id, "A1:A6").value_input_option("USER_ENTERED").doit().await;
+    let req = ValueRange{major_dimension: Some("ROWS".to_owned()), values: Some(vec![vec![Into::into("ferris"), Into::into("corro")]]), range: Some(String::from("A1:A6"))};    
+    let _result = hub.spreadsheets().values_append( req, sheet_id, "A1:A6").value_input_option("USER_ENTERED").doit().await;
 }
