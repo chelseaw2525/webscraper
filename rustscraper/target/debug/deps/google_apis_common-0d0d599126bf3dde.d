@@ -1,9 +1,0 @@
-C:\Users\bookw\Code\webscraping\rustscraper\target\debug\deps\libgoogle_apis_common-0d0d599126bf3dde.rmeta: C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\google-apis-common-6.0.1\src\lib.rs C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\google-apis-common-6.0.1\src\auth.rs C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\google-apis-common-6.0.1\src\field_mask.rs C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\google-apis-common-6.0.1\src\serde.rs C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\google-apis-common-6.0.1\src\url.rs
-
-C:\Users\bookw\Code\webscraping\rustscraper\target\debug\deps\google_apis_common-0d0d599126bf3dde.d: C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\google-apis-common-6.0.1\src\lib.rs C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\google-apis-common-6.0.1\src\auth.rs C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\google-apis-common-6.0.1\src\field_mask.rs C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\google-apis-common-6.0.1\src\serde.rs C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\google-apis-common-6.0.1\src\url.rs
-
-C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\google-apis-common-6.0.1\src\lib.rs:
-C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\google-apis-common-6.0.1\src\auth.rs:
-C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\google-apis-common-6.0.1\src\field_mask.rs:
-C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\google-apis-common-6.0.1\src\serde.rs:
-C:\Users\bookw\.cargo\registry\src\index.crates.io-6f17d22bba15001f\google-apis-common-6.0.1\src\url.rs:
