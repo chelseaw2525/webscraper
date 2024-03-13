@@ -33,3 +33,7 @@ path = "src/catenary.rs"
 [[bin]]
 name = "searcher"
 path = "src/searcher.rs"
+
+[[bin]]
+name = "sobbing"
+path = "src/sobbing.rs"
